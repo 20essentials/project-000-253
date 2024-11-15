@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  perspective: 10000px;
+  transform-style: preserve-3d;
+  animation: rotar 11s linear infinite alternate both;
+  zoom: .4;
+
+  .aro {
+    width: 100%;
+    height: 100%;
+    border: 10px solid #fff;
+    border-radius: inherit;
+    position: absolute;
+    transform:  rotateX(90deg) rotateY(calc(360deg / 9 * var(--r))) translateZ(300px);
+  }
+}
+
+
+@keyframes rotar {
+  0% {
+    transform: rotateX(30deg) rotateY(20deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(30deg) rotateY(20deg) rotateZ(360deg);
+  }
+}
